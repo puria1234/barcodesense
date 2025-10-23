@@ -1,4 +1,4 @@
-# GroSnap - Smart Food Scanner
+# Scanthera - Smart Food Scanner
 
 An AI-powered food barcode scanner that helps you make healthier, more informed food choices. Upload barcode images to get instant product information plus unique AI-driven insights you won't find anywhere else.
 
@@ -37,23 +37,24 @@ An AI-powered food barcode scanner that helps you make healthier, more informed 
 ## Local Development
 
 1. Clone or download this repository
-2. Add your OpenRouter API key in `config.js`:
-   ```javascript
-   OPENROUTER_API_KEY: "your-api-key-here";
+2. Create a `.env` file in the root directory:
+   ```env
+   OPENROUTER_API_KEY=your-api-key-here
+   APP_URL=http://localhost:3000
    ```
-3. Start a local web server:
-   - Python: `python -m http.server 8000`
-   - Node.js: `npx serve`
-   - Or any local web server
-4. Visit `http://localhost:8000` (or appropriate port)
+3. Install dependencies and start the development server:
+   ```bash
+   npm install
+   npm run dev
+   ```
+4. Visit `http://localhost:3000`
 
 ## Configuration
 
-Edit `config.js` to customize:
+Set up your environment variables in `.env`:
 
-- OpenRouter API key for AI features
-- AI model selection
-- API endpoints
+- `OPENROUTER_API_KEY` - Your OpenRouter API key for AI features
+- `APP_URL` - Your application URL (optional, defaults to vercel.app URL)
 
 ## Technologies Used
 
