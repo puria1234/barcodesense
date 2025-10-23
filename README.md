@@ -1,4 +1,4 @@
-# Scanthera - Smart Food Scanner
+# BarcodifyAI - Smart Food Scanner
 
 An AI-powered food barcode scanner that helps you make healthier, more informed food choices. Upload barcode images to get instant product information plus unique AI-driven insights you won't find anywhere else.
 
@@ -28,11 +28,12 @@ An AI-powered food barcode scanner that helps you make healthier, more informed 
 
 **Alternative:** Enter a barcode number manually if you know it
 
-## Browser Requirements
+## Requirements
 
 - Modern browser (Chrome, Firefox, Safari, Edge)
 - JavaScript enabled
 - Internet connection for API access
+- **OpenRouter API key with credits** - Required for AI-powered features. Get one at [openrouter.ai](https://openrouter.ai)
 
 ## Local Development
 
@@ -40,7 +41,7 @@ An AI-powered food barcode scanner that helps you make healthier, more informed 
 2. Create a `.env` file in the root directory:
    ```env
    OPENROUTER_API_KEY=your-api-key-here
-   APP_URL=http://localhost:3000
+   APP_URL=your-app-url-here
    ```
 3. Install dependencies and start the development server:
    ```bash
@@ -53,13 +54,5 @@ An AI-powered food barcode scanner that helps you make healthier, more informed 
 
 Set up your environment variables in `.env`:
 
-- `OPENROUTER_API_KEY` - Your OpenRouter API key for AI features
+- `OPENROUTER_API_KEY` - Your OpenRouter API key with credits for AI features (get one at [openrouter.ai](https://openrouter.ai))
 - `APP_URL` - Your application URL (optional, defaults to vercel.app URL)
-
-## Technologies Used
-
-- **Quagga.js** - Barcode detection from images
-- **Open Food Facts API** - Product and nutrition data
-- **OpenRouter API** - AI-powered insights (Gemini 2.0 Flash)
-- **Vanilla JavaScript** - No frameworks, pure performance
-- **Modern CSS** - Beautiful dark theme with smooth animations

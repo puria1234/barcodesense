@@ -26,8 +26,8 @@ export default async function handler(req, res) {
       headers: {
         'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': process.env.APP_URL || req.headers.origin || 'https://scanthera.vercel.app',
-        'X-Title': 'Scanthera Food Scanner'
+        'HTTP-Referer': process.env.APP_URL || req.headers.origin || 'https://barcodifyai.vercel.app',
+        'X-Title': 'BarcodifyAI Food Scanner'
       },
       body: JSON.stringify(req.body)
     });
