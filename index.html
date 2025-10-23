@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>BarcodifyAI - Smart Food Scanner</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Crect x='2' y='6' width='1.5' height='12' rx='0.5'/%3E%3Crect x='4.5' y='6' width='1' height='12' rx='0.5'/%3E%3Crect x='6.5' y='6' width='2' height='12' rx='0.5'/%3E%3Crect x='9.5' y='6' width='1' height='12' rx='0.5'/%3E%3Crect x='11.5' y='6' width='1.5' height='12' rx='0.5'/%3E%3Crect x='14' y='6' width='1' height='12' rx='0.5'/%3E%3Crect x='16' y='6' width='2' height='12' rx='0.5'/%3E%3Crect x='19' y='6' width='1' height='12' rx='0.5'/%3E%3Crect x='21' y='6' width='1.5' height='12' rx='0.5'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,14 +151,24 @@
                     <h3 class="upload-title">Upload Barcode Image</h3>
                     <p class="upload-subtitle">Click to browse or drag and drop an image</p>
                     <input type="file" id="imageInput" accept="image/*" hidden>
-                    <button id="uploadBtn" class="btn btn-primary">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="17 8 12 3 7 8"></polyline>
-                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
-                        Choose Image
-                    </button>
+                    <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+                    <div class="button-group">
+                        <button id="uploadBtn" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            Choose Image
+                        </button>
+                        <button id="cameraBtn" class="btn btn-primary mobile-only">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                            Take Picture
+                        </button>
+                    </div>
                 </div>
 
                 <div id="imagePreview" class="image-preview hidden">

@@ -478,6 +478,23 @@ body {
     transform: none !important;
 }
 
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: flex;
+    }
+}
+
 /* Results */
 .result-container {
     background: var(--dark-card);
