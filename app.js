@@ -54,21 +54,6 @@ uploadBtn.addEventListener("click", (e) => {
   imageInput.click();
 });
 
-const cameraBtn = document.getElementById("cameraBtn");
-const cameraInput = document.getElementById("cameraInput");
-
-cameraBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  cameraInput.click();
-});
-
-cameraInput.addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    handleImageUpload(file);
-  }
-});
-
 uploadArea.addEventListener("click", (e) => {
   // Only trigger if clicking the upload area itself, not the button
   if (e.target === uploadArea || uploadArea.contains(e.target)) {
