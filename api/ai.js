@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': process.env.APP_URL || req.headers.origin,
-        'X-Title': 'BarcodifyAI Food Scanner'
+        'X-Title': 'BarcodeSense Food Scanner'
       },
       body: JSON.stringify(req.body)
     });

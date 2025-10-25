@@ -1189,6 +1189,61 @@ body {
   .ai-button {
     padding: 12px 16px;
     font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .eco-score-card {
+    padding: 0;
+  }
+
+  .eco-overall-top {
+    padding: 20px 15px;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .score-circle-large {
+    width: 80px;
+    height: 80px;
+  }
+
+  .score-number {
+    font-size: 1.8rem;
+  }
+
+  .score-text h4 {
+    font-size: 1.1rem;
+  }
+
+  .score-text p {
+    font-size: 0.85rem;
+  }
+
+  .eco-metrics {
+    padding: 15px;
+  }
+
+  .eco-item {
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .eco-info {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .eco-explanation,
+  .eco-tips {
+    margin: 15px;
+    padding: 15px;
   }
 
   .app-title {

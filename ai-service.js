@@ -28,7 +28,11 @@ class AIService {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        throw new Error(`API error: ${response.status} - ${errorData.error || 'Unknown error'}`);
+        throw new Error(
+          `API error: ${response.status} - ${
+            errorData.error || "Unknown error"
+          }`
+        );
       }
 
       const data = await response.json();
@@ -55,12 +59,12 @@ User dietary restrictions: ${userPrefs.dietaryRestrictions.join(", ") || "None"}
 User allergies: ${userPrefs.allergies.join(", ") || "None"}
 
 Suggest 3 healthier alternatives with similar flavor profiles. For each, provide:
-1. Product type/name
-2. Why it's healthier
-3. Flavor similarity (1-10)
-4. Estimated price range
+1. product_name: The specific product name or brand
+2. why_it_s_healthier: Why it's healthier
+3. flavor_similarity: Flavor similarity (1-10)
+4. estimated_price_range: Estimated price range
 
-Format as JSON array.`;
+Format as JSON array with these exact keys. Make sure product_name contains the actual product name, not just a category.`;
 
     return await this.callAI(
       prompt,
@@ -86,7 +90,10 @@ Based on this mood, recommend 3 foods that would help. For each recommendation p
 
 Format as JSON array with these exact keys.`;
 
-    return await this.callAI(prompt, "You are a wellness and nutrition coach. Always respond with valid JSON.");
+    return await this.callAI(
+      prompt,
+      "You are a wellness and nutrition coach. Always respond with valid JSON."
+    );
   }
 
   // Diet Compatibility Analysis
