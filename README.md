@@ -1,4 +1,4 @@
-# BarcodifyAI - Smart Food Scanner
+# BarcodeSense - Smart Food Scanner
 
 An AI-powered food barcode scanner that helps you make healthier, more informed food choices. Upload barcode images to get instant product information plus unique AI-driven insights you won't find anywhere else.
 
