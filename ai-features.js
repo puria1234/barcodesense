@@ -212,7 +212,7 @@ function formatAIResponse(content) {
           </div>
           <div class="score-text">
             <h4>Environmental Impact Score</h4>
-            <p>${score >= 7 ? 'Great choice! 🌱' : score >= 4 ? 'Moderate impact ⚠️' : 'High impact 🔴'}</p>
+            <p>${score >= 7 ? 'Great choice!' : score >= 4 ? 'Moderate impact' : 'High impact'}</p>
           </div>
         </div>`;
       }
@@ -221,7 +221,13 @@ function formatAIResponse(content) {
       
       if (parsed.carbon_footprint) {
         html += `<div class="eco-item">
-          <span class="eco-icon">🌍</span>
+          <span class="eco-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 28px; height: 28px;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </span>
           <div class="eco-info">
             <span class="eco-label">Carbon Footprint</span>
             <span class="eco-value ${parsed.carbon_footprint.toLowerCase()}">${parsed.carbon_footprint}</span>
@@ -365,7 +371,13 @@ function formatAIResponse(content) {
               
               ${info.concerns && info.concerns !== 'null' && info.concerns !== null ? `
                 <div class="diet-section concerns">
-                  <span class="section-icon">⚠️</span>
+                  <span class="section-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                      <line x1="12" y1="9" x2="12" y2="13"></line>
+                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                  </span>
                   <div class="section-content">
                     <h5>Concerns</h5>
                     <p>${info.concerns || info.Concerns}</p>

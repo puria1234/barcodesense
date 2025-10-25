@@ -24,29 +24,110 @@ window.addEventListener("load", () => {
   app.classList.remove("hidden");
 });
 
-// Navigation
-function showHome() {
-  homeScreen.classList.remove("hidden");
-  scannerScreen.classList.add("hidden");
-  navHome.classList.add("active");
-  navScan.classList.remove("active");
-  resetUpload();
+// Smooth scroll navigation
+const featuresLink = document.getElementById("featuresLink");
+const missionLink = document.getElementById("missionLink");
+const getStartedLink = document.getElementById("getStartedLink");
+
+function smoothScrollTo(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    const headerOffset = 80;
+    const elementPosition = section.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 }
 
-function showScanner() {
-  homeScreen.classList.add("hidden");
-  scannerScreen.classList.remove("hidden");
-  navHome.classList.remove("active");
-  navScan.classList.add("active");
+function updateNavActive(activeLink) {
+  document.querySelectorAll(".nav-link, .get-started-btn").forEach(link => {
+    link.classList.remove("active");
+  });
+  if (activeLink) {
+    activeLink.classList.add("active");
+  }
 }
 
-// Event listeners
-startScanningBtn.addEventListener("click", () => {
-  showScanner();
+if (featuresLink) {
+  featuresLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    smoothScrollTo("features");
+    updateNavActive(featuresLink);
+  });
+}
+
+if (missionLink) {
+  missionLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    smoothScrollTo("mission");
+    updateNavActive(missionLink);
+  });
+}
+
+if (getStartedLink) {
+  getStartedLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    showAppPage();
+  });
+}
+
+// Show/hide app page
+const mainPage = document.querySelector(".main-content");
+const appPage = document.getElementById("appPage");
+
+function showAppPage() {
+  if (mainPage) mainPage.classList.add("hidden");
+  if (appPage) appPage.classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showMainPage() {
+  if (mainPage) mainPage.classList.remove("hidden");
+  if (appPage) appPage.classList.add("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Back button
+const backToMain = document.getElementById("backToMain");
+if (backToMain) {
+  backToMain.addEventListener("click", showMainPage);
+}
+
+// Update active nav on scroll
+window.addEventListener("scroll", () => {
+  if (appPage && !appPage.classList.contains("hidden")) return;
+  
+  const sections = ["features", "mission"];
+  const scrollPosition = window.pageYOffset + 150;
+
+  sections.forEach(sectionId => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        const activeLink = document.getElementById(sectionId + "Link");
+        updateNavActive(activeLink);
+      }
+    }
+  });
 });
 
-navHome.addEventListener("click", showHome);
-navScan.addEventListener("click", showScanner);
+// Reset upload function
+function resetUpload() {
+  imagePreview.classList.add("hidden");
+  uploadArea.classList.remove("hidden");
+  previewImg.src = "";
+  imageInput.value = "";
+  result.classList.add("hidden");
+  statusEl.textContent = "";
+  statusEl.className = "status-message";
+}
 
 // Upload functionality
 uploadBtn.addEventListener("click", (e) => {
@@ -318,17 +399,17 @@ async function displayProductInfo(product) {
     let nutritionHtml =
       '<div class="product-field"><strong>Nutrition Facts (per 100g)</strong><div>';
     if (product.nutriments.energy_value)
-      nutritionHtml += `🔥 Energy: ${product.nutriments.energy_value} ${
+      nutritionHtml += `Energy: ${product.nutriments.energy_value} ${
         product.nutriments.energy_unit || "kcal"
       }<br>`;
     if (product.nutriments.fat)
-      nutritionHtml += `🥑 Fat: ${product.nutriments.fat}g<br>`;
+      nutritionHtml += `Fat: ${product.nutriments.fat}g<br>`;
     if (product.nutriments.carbohydrates)
-      nutritionHtml += `🍞 Carbs: ${product.nutriments.carbohydrates}g<br>`;
+      nutritionHtml += `Carbs: ${product.nutriments.carbohydrates}g<br>`;
     if (product.nutriments.proteins)
-      nutritionHtml += `🥩 Protein: ${product.nutriments.proteins}g<br>`;
+      nutritionHtml += `Protein: ${product.nutriments.proteins}g<br>`;
     if (product.nutriments.salt)
-      nutritionHtml += `🧂 Salt: ${product.nutriments.salt}g<br>`;
+      nutritionHtml += `Salt: ${product.nutriments.salt}g<br>`;
     nutritionHtml += "</div></div>";
     html += nutritionHtml;
   }
@@ -336,7 +417,13 @@ async function displayProductInfo(product) {
   // AI-Powered Features Section
   html += `
     <div class="ai-features-section">
-      <h3 class="ai-section-title">🧠 AI Insights</h3>
+      <h3 class="ai-section-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px; display: inline-block; vertical-align: middle; margin-right: 8px;">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"></path>
+        </svg>
+        AI Insights
+      </h3>
       
       <button class="ai-button" onclick="getHealthierAlternatives('${
         product.code || product.barcode

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Scan Product - BarcodeSense</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main App -->
+    <div id="app" class="app hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo-small">
+                        <img src="favicon.png" alt="BarcodeSense Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <h1 class="app-title">BarcodeSense</h1>
+                </div>
+                <nav class="top-nav">
+                    <a href="app.html" class="get-started-btn active">Get Started</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- App Content -->
+        <main class="main-content">
+            <div class="app-page-header">
+                <a href="index.html" class="back-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </a>
+                <h2 class="page-title">Scan Your Product</h2>
+            </div>
+
+            <div class="scanner-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3 class="upload-title">Upload Barcode Image</h3>
+                    <p class="upload-subtitle">Click to browse or drag and drop an image</p>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <button id="uploadBtn" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        Choose Image
+                    </button>
+                </div>
+
+                <div id="imagePreview" class="image-preview hidden">
+                    <img id="previewImg" src="" alt="Preview">
+                    <div class="preview-actions">
+                        <button id="removeImage" class="btn-remove" title="Remove image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="status" class="status-message"></div>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="manual-input-section">
+                    <h3 class="manual-title">Enter Barcode Manually</h3>
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="manualBarcode" 
+                            class="barcode-input" 
+                            placeholder="Enter barcode number..."
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                        >
+                        <button id="searchBtn" class="btn btn-search">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="result" class="result-container hidden">
+                <div class="result-header">
+                    <h2>Product Details</h2>
+                    <button id="closeResult" class="btn-close">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div id="productInfo" class="product-info"></div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.min.js"></script>
+    <script src="config.js"></script>
+    <script src="ai-service.js"></script>
+    <script src="ai-features.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
