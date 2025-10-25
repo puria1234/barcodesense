@@ -209,8 +209,7 @@ function formatAIResponse(content) {
         const productName =
           item.product_name ||
           item.name ||
-          item.product_type_name ||
-          `Alternative ${index + 1}`;
+          item.product_type_name;
         html += `
           <div class="alternative-card">
             <div class="alternative-header">
