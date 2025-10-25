@@ -1246,33 +1246,6 @@ body {
     padding: 15px;
   }
 
-  .scanner-container {
-    padding: 0;
-  }
-
-  .upload-area {
-    padding: 40px 20px;
-  }
-
-  .manual-input-section {
-    padding: 20px 15px;
-  }
-
-  .input-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .barcode-input {
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-  }
-
-  .btn-search {
-    width: 100%;
-  }
-
   .app-title {
     font-size: 1.2rem;
   }
@@ -1453,8 +1426,12 @@ body {
 
   .success-modal {
     min-width: 280px;
+    max-width: 90%;
+    width: auto;
     padding: 30px 25px;
-    margin: 0 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .success-icon {

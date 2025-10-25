@@ -1,7 +1,7 @@
-// AI Service using OpenRouter Gemini 2.0 Flash
+// AI Service
 class AIService {
   constructor() {
-    this.apiUrl = CONFIG.OPENROUTER_API_URL; // Now points to our proxy
+    this.apiUrl = CONFIG.OPENROUTER_API_URL;
     this.model = CONFIG.MODEL;
   }
 

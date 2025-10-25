@@ -302,37 +302,6 @@ function formatAIResponse(content) {
         const comp = info.compatible || info.Compatible;
         return comp === 'Yes' || comp === true;
       }).length;
-      const maybeCount = Object.values(parsed).filter(info => {
-        const comp = info.compatible || info.Compatible;
-        return comp === 'Maybe';
-      }).length;
-      
-      html += `<div class="diet-summary">
-        <div class="summary-stats">
-          <div class="stat-item compatible">
-            <span class="stat-icon">✓</span>
-            <div class="stat-info">
-              <span class="stat-number">${compatibleCount}</span>
-              <span class="stat-label">Compatible</span>
-            </div>
-          </div>
-          <div class="stat-item maybe">
-            <span class="stat-icon">?</span>
-            <div class="stat-info">
-              <span class="stat-number">${maybeCount}</span>
-              <span class="stat-label">Maybe</span>
-            </div>
-          </div>
-          <div class="stat-item not-compatible">
-            <span class="stat-icon">✗</span>
-            <div class="stat-info">
-              <span class="stat-number">${totalDiets - compatibleCount - maybeCount}</span>
-              <span class="stat-label">Not Compatible</span>
-            </div>
-          </div>
-        </div>
-      </div>`;
-      
       html += '<div class="diet-cards-container">';
       
       Object.entries(parsed).forEach(([diet, info]) => {
