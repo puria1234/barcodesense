@@ -159,18 +159,19 @@ body {
   background: linear-gradient(
     90deg,
     #ffffff,
-    #e5e5e5,
-    #a1a1aa,
-    #e5e5e5,
+    #fbbf24,
+    #ef4444,
+    #a78bfa,
+    #10b981,
     #ffffff
   );
-  background-size: 200% auto;
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 15px;
   letter-spacing: -0.5px;
-  animation: gradientShift 3s ease-in-out infinite;
+  animation: gradientShift 5s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
