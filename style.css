@@ -2623,6 +2623,44 @@ body {
   margin-bottom: 20px;
 }
 
+.photo-requirements {
+  background: var(--dark-elevated);
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.photo-requirements h4 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.photo-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.photo-requirements li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  padding-left: 25px;
+  position: relative;
+}
+
+.photo-requirements li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--white);
+  font-weight: 700;
+}
+
 .upload-area .btn-primary {
   margin: 0 auto;
   max-width: 250px;

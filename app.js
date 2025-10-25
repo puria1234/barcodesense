@@ -38,13 +38,13 @@ function smoothScrollTo(sectionId) {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }
 }
 
 function updateNavActive(activeLink) {
-  document.querySelectorAll(".nav-link, .get-started-btn").forEach(link => {
+  document.querySelectorAll(".nav-link, .get-started-btn").forEach((link) => {
     link.classList.remove("active");
   });
   if (activeLink) {
@@ -100,17 +100,20 @@ if (backToMain) {
 // Update active nav on scroll
 window.addEventListener("scroll", () => {
   if (appPage && !appPage.classList.contains("hidden")) return;
-  
+
   const sections = ["features", "mission"];
   const scrollPosition = window.pageYOffset + 150;
 
-  sections.forEach(sectionId => {
+  sections.forEach((sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition < sectionTop + sectionHeight
+      ) {
         const activeLink = document.getElementById(sectionId + "Link");
         updateNavActive(activeLink);
       }
@@ -260,7 +263,7 @@ function decodeBarcode(imageSrc) {
         statusEl.textContent =
           "No barcode detected. Try another image, adjust the angle, or enter manually.";
         statusEl.className = "status-message error";
-        
+
         // Keep the preview visible so user can see what was uploaded
         // They can click remove to try again
       }
