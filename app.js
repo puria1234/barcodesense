@@ -352,8 +352,9 @@ async function fetchProductInfo(barcode) {
                 <div class="product-field">
                     <strong>Barcode:</strong> ${barcode}
                 </div>
-                <div class="product-field">
-                    <p>Product not found in database.</p>
+                <div class="product-field not-found-message">
+                    <p style="color: var(--white);">Product not found in our database.</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 10px;">Perhaps this product doesn't exist in our system yet, or the barcode may be incorrect. Try scanning again or enter a different barcode.</p>
                 </div>
             `;
       result.classList.remove("hidden");
