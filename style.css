@@ -582,6 +582,21 @@ body {
   margin: 0;
 }
 
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--dark-card);
+  border-top: 1px solid var(--light-gray);
+  margin-top: 60px;
+}
+
+.app-footer p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 /* Features Grid */
 .features-grid {
   display: grid;
