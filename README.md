@@ -4,15 +4,15 @@ An AI-powered food barcode scanner that helps you make healthier, more informed 
 
 ## Features
 
-- � *a*Upload Barcode Images\*\* - Upload photos of barcodes for instant scanning
-- 🍕 **Product Information** - Comprehensive data from Open Food Facts database
-- 📊 **Nutritional Facts** - Detailed nutrition breakdown per 100g
-- 🧠 **AI Health Alternatives** - Get personalized healthier product recommendations
-- � *o*Mood-Based Suggestions\*\* - Discover foods that match your mood and energy levels
-- ✅ **Diet Compatibility** - Check if products match Vegan, Keto, Halal, Kosher, and more
-- 🌱 **Eco Impact Score** - Understand the environmental footprint of your food choices
-- 🎨 **Modern Dark UI** - Beautiful, responsive interface that works on all devices
-- ⚡ **Fast & Easy** - Get results in seconds with drag-and-drop support
+- **Upload Barcode Images** - Upload photos of barcodes for instant scanning
+- **Product Information** - Comprehensive data from Open Food Facts database
+- **Nutritional Facts** - Detailed nutrition breakdown per 100g
+- **AI Health Alternatives** - Get personalized healthier product recommendations
+- **Mood-Based Suggestions** - Discover foods that match your mood and energy levels
+- **Diet Compatibility** - Check if products match Vegan, Keto, Halal, Kosher, and more
+- **Eco Impact Score** - Understand the environmental footprint of your food choices
+- **Modern Dark UI** - Beautiful, responsive interface that works on all devices
+- **Fast & Easy** - Get results in seconds with drag-and-drop support
 
 ## How to Use
 
