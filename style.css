@@ -1143,6 +1143,19 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
   }
 
+  .app-page-header {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .back-button {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
   .app-title {
     font-size: 1.2rem;
   }
